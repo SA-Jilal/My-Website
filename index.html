@@ -1,1213 +1,1491 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Jilal Ahmed | Web Development & Graphics Design</title>
 
 <style>
-
 *{
-box-sizing:border-box;
-}
-
-html{
-scroll-behavior:smooth;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
 body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#f4f6f8;
-color:#222;
-line-height:1.6;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#020b18;
+    color:#fff;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
 }
 
 section{
-padding:60px 20px;
+    padding:90px 8%;
 }
 
-h1,h2,h3{
-margin-top:0;
+.container{
+    max-width:1200px;
+    margin:auto;
 }
 
-button,a{
-cursor:pointer;
+/* NAVBAR */
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(2,11,24,.94);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(22,140,255,.15);
 }
 
-
-/* ===== NAVIGATION ===== */
-
-nav{
-position:sticky;
-top:0;
-z-index:1000;
-background:#111;
-padding:15px;
-text-align:center;
+.nav-container{
+    max-width:1250px;
+    margin:auto;
+    padding:15px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
-nav a{
-color:white;
-text-decoration:none;
-margin:0 12px;
-font-weight:bold;
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:22px;
+    font-weight:bold;
+    color:#168cff;
 }
 
-nav a:hover{
-color:#00c3ff;
+.logo img{
+    width:42px;
+    height:42px;
+    object-fit:cover;
+    border-radius:50%;
+    border:2px solid #168cff;
 }
 
+.nav-links{
+    display:flex;
+    gap:22px;
+    list-style:none;
+}
 
-/* ===== HERO ===== */
+.nav-links a{
+    color:#ddd;
+    font-size:14px;
+    transition:.3s;
+}
 
+.nav-links a:hover{
+    color:#168cff;
+}
+
+.nav-social{
+    display:flex;
+    gap:8px;
+}
+
+.nav-social a{
+    width:32px;
+    height:32px;
+    border:1px solid #168cff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:13px;
+    color:#168cff;
+    transition:.3s;
+}
+
+.nav-social a:hover{
+    background:#168cff;
+    color:#fff;
+}
+
+/* HERO */
 .hero{
-background:linear-gradient(135deg,#111,#333);
-color:white;
-text-align:center;
-padding:80px 20px;
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+    padding:70px 8%;
+    background:
+    radial-gradient(circle at 80% 50%,rgba(22,140,255,.16),transparent 35%);
 }
 
-.profile-circle{
-width:130px;
-height:130px;
-border-radius:50%;
-background:#00c3ff;
-color:#111;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:42px;
-font-weight:bold;
-margin:0 auto 20px;
+.hero-container{
+    max-width:1200px;
+    margin:auto;
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:60px;
+}
+
+.hero-text{
+    flex:1;
+}
+
+.hero-small{
+    color:#168cff;
+    font-size:20px;
+    font-weight:bold;
 }
 
 .hero h1{
-font-size:42px;
-margin-bottom:10px;
+    font-size:64px;
+    line-height:1.1;
+    margin:12px 0;
 }
 
 .hero h2{
-font-size:24px;
-color:#00c3ff;
+    font-size:25px;
+    color:#ddd;
+    margin-bottom:20px;
 }
 
 .hero p{
-max-width:700px;
-margin:20px auto;
+    max-width:620px;
+    color:#aeb8c5;
+    font-size:17px;
+    margin-bottom:30px;
 }
 
-.skills{
-display:flex;
-justify-content:center;
-gap:10px;
-flex-wrap:wrap;
-margin:25px 0;
-}
-
-.skill{
-background:#00c3ff;
-color:#111;
-padding:8px 15px;
-border-radius:20px;
-font-weight:bold;
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
 }
 
 .btn{
-display:inline-block;
-background:#00c3ff;
-color:#111;
-padding:12px 25px;
-border-radius:8px;
-text-decoration:none;
-font-weight:bold;
-margin-top:15px;
+    display:inline-block;
+    padding:13px 27px;
+    border-radius:30px;
+    background:#168cff;
+    color:#fff;
+    font-weight:bold;
+    transition:.3s;
 }
 
 .btn:hover{
-background:white;
+    transform:translateY(-3px);
+    box-shadow:0 8px 25px rgba(22,140,255,.35);
 }
 
-
-/* ===== ABOUT ===== */
-
-.about{
-background:white;
-text-align:center;
+.btn-outline{
+    background:transparent;
+    border:1px solid #168cff;
 }
 
-.about-content{
-max-width:800px;
-margin:auto;
+.btn-outline:hover{
+    background:#168cff;
 }
 
-
-/* ===== SERVICES ===== */
-
-.services{
-background:#f4f6f8;
-text-align:center;
+.hero-social{
+    display:flex;
+    gap:12px;
+    margin-top:30px;
 }
 
-.service-container{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-max-width:1100px;
-margin:auto;
+.hero-social a{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    border:1px solid #168cff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#168cff;
+    font-size:14px;
+    transition:.3s;
+}
+
+.hero-social a:hover{
+    background:#168cff;
+    color:#fff;
+    transform:translateY(-3px);
+}
+
+.hero-image{
+    flex:0 0 360px;
+    display:flex;
+    justify-content:center;
+}
+
+.hero-image img{
+    width:330px;
+    height:330px;
+    object-fit:cover;
+    border-radius:50%;
+    border:7px solid #168cff;
+    box-shadow:0 0 60px rgba(22,140,255,.25);
+}
+
+/* HEADINGS */
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.section-title span{
+    color:#168cff;
+}
+
+.section-title p{
+    color:#9da8b7;
+}
+
+/* ABOUT */
+.about-grid{
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about-text h3{
+    font-size:30px;
+    margin-bottom:18px;
+}
+
+.about-text p{
+    color:#aeb8c5;
+    margin-bottom:15px;
+}
+
+.about-info{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.info-card{
+    background:#061323;
+    border:1px solid rgba(22,140,255,.2);
+    padding:22px;
+    border-radius:15px;
+    transition:.3s;
+}
+
+.info-card:hover{
+    border-color:#168cff;
+    transform:translateY(-5px);
+}
+
+.info-card h4{
+    color:#168cff;
+    margin-bottom:8px;
+}
+
+.info-card p{
+    color:#aeb8c5;
+    font-size:14px;
+}
+
+/* SKILLS */
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.skill-card{
+    background:#061323;
+    border:1px solid rgba(22,140,255,.18);
+    padding:25px;
+    border-radius:16px;
+    transition:.3s;
+}
+
+.skill-card:hover{
+    transform:translateY(-7px);
+    border-color:#168cff;
+}
+
+.skill-card h3{
+    margin-bottom:15px;
+}
+
+.skill-card p{
+    color:#9da8b7;
+    font-size:14px;
+    margin-bottom:12px;
+}
+
+.skill-bar{
+    height:8px;
+    background:#122238;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.skill-fill{
+    height:100%;
+    background:#168cff;
+    border-radius:20px;
+}
+
+/* SERVICES */
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
 }
 
 .service-card{
-background:white;
-width:240px;
-padding:25px;
-border-radius:15px;
-box-shadow:0 4px 15px rgba(0,0,0,0.1);
-transition:0.3s;
+    background:#061323;
+    border:1px solid rgba(22,140,255,.18);
+    padding:30px 22px;
+    text-align:center;
+    border-radius:18px;
+    transition:.3s;
 }
 
 .service-card:hover{
-transform:translateY(-8px);
+    transform:translateY(-8px);
+    border-color:#168cff;
+}
+
+.service-icon{
+    font-size:42px;
+    margin-bottom:15px;
 }
 
 .service-card h3{
-color:#00a4d6;
+    color:#168cff;
+    margin-bottom:10px;
 }
 
-
-/* ===== PRICING ===== */
-
-.pricing{
-background:white;
-text-align:center;
+.service-card p{
+    color:#aeb8c5;
+    font-size:14px;
 }
 
-.price-container{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-max-width:1000px;
-margin:auto;
+/* PORTFOLIO */
+.portfolio-section{
+    background:#030e1c;
+}
+
+.portfolio-intro{
+    max-width:700px;
+    margin:-25px auto 45px;
+    text-align:center;
+    color:#9da8b7;
+}
+
+.portfolio-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.project-card{
+    background:#061323;
+    border:1px solid rgba(22,140,255,.2);
+    border-radius:18px;
+    overflow:hidden;
+    transition:.35s;
+}
+
+.project-card:hover{
+    transform:translateY(-8px);
+    border-color:#168cff;
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+}
+
+.project-image{
+    height:210px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:
+    linear-gradient(135deg,#061323,#0b2340);
+    font-size:65px;
+    border-bottom:1px solid rgba(22,140,255,.15);
+}
+
+.project-content{
+    padding:24px;
+}
+
+.project-tag{
+    display:inline-block;
+    color:#168cff;
+    font-size:12px;
+    font-weight:bold;
+    margin-bottom:8px;
+    text-transform:uppercase;
+}
+
+.project-content h3{
+    margin-bottom:10px;
+}
+
+.project-content p{
+    color:#9da8b7;
+    font-size:14px;
+    margin-bottom:18px;
+}
+
+.project-btn{
+    display:inline-block;
+    color:#168cff;
+    font-weight:bold;
+    font-size:14px;
+}
+
+/* EDUCATION */
+.education-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.education-card{
+    background:#061323;
+    padding:28px;
+    border-left:4px solid #168cff;
+    border-radius:12px;
+}
+
+.education-card span{
+    color:#168cff;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.education-card h3{
+    margin:10px 0;
+}
+
+.education-card p{
+    color:#aeb8c5;
+    font-size:14px;
+}
+
+/* PRICING */
+.pricing-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
 }
 
 .price-card{
-background:#f4f6f8;
-width:260px;
-padding:30px;
-border-radius:15px;
-box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    background:#061323;
+    border:1px solid rgba(22,140,255,.2);
+    border-radius:18px;
+    padding:35px 25px;
+    text-align:center;
+    transition:.3s;
+}
+
+.price-card:hover{
+    transform:translateY(-8px);
+    border-color:#168cff;
+}
+
+.price-card.featured{
+    border:2px solid #168cff;
+    transform:scale(1.03);
+}
+
+.price-card h3{
+    color:#168cff;
 }
 
 .price{
-font-size:30px;
-font-weight:bold;
-color:#00a4d6;
+    font-size:42px;
+    font-weight:bold;
+    margin:15px 0;
 }
 
+.price-card ul{
+    list-style:none;
+    color:#aeb8c5;
+    margin:20px 0;
+}
 
-/* ===== FAQ ===== */
+.price-card li{
+    margin:8px 0;
+}
+
+/* FAQ */
+.faq-container{
+    max-width:850px;
+    margin:auto;
+}
 
 .faq{
-background:#f4f6f8;
+    background:#061323;
+    border:1px solid rgba(22,140,255,.18);
+    padding:22px;
+    border-radius:12px;
+    margin-bottom:15px;
 }
 
-.faq-container{
-max-width:800px;
-margin:auto;
+.faq h3{
+    color:#168cff;
+    margin-bottom:8px;
 }
 
-details{
-background:white;
-margin:12px 0;
-padding:15px 20px;
-border-radius:10px;
-box-shadow:0 3px 10px rgba(0,0,0,0.08);
+.faq p{
+    color:#aeb8c5;
 }
 
-summary{
-font-weight:bold;
-cursor:pointer;
+/* POSTS */
+.posts-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
 }
 
-
-/* ===== SOCIAL MEDIA ===== */
-
-.social{
-background:white;
-text-align:center;
+.post-card{
+    background:#061323;
+    border:1px solid rgba(22,140,255,.18);
+    padding:25px;
+    border-radius:16px;
 }
 
-.social-links{
-display:flex;
-justify-content:center;
-gap:18px;
-flex-wrap:wrap;
-max-width:900px;
-margin:auto;
+.post-card span{
+    color:#168cff;
+    font-size:12px;
 }
 
-.social-link{
-display:inline-block;
-min-width:150px;
-padding:16px 22px;
-border-radius:12px;
-text-decoration:none;
-color:white;
-font-weight:bold;
-font-size:17px;
-transition:0.3s;
+.post-card h3{
+    margin:10px 0;
 }
 
-.social-link:hover{
-transform:translateY(-5px);
-opacity:0.85;
-}
-
-.facebook{
-background:#1877f2;
-}
-
-.whatsapp{
-background:#25d366;
-}
-
-.instagram{
-background:#e1306c;
-}
-
-.youtube{
-background:#ff0000;
-}
-
-.tiktok{
-background:#111;
-}
-
-
-/* ===== POSTS ===== */
-
-.posts{
-background:#f4f6f8;
-text-align:center;
-}
-
-.search-box{
-max-width:500px;
-margin:20px auto;
-}
-
-.search-box input{
-width:100%;
-padding:14px;
-border:1px solid #ccc;
-border-radius:8px;
-font-size:16px;
-}
-
-.post-container{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-max-width:1100px;
-margin:auto;
-}
-
-.post{
-background:white;
-width:280px;
-padding:25px;
-border-radius:15px;
-box-shadow:0 4px 12px rgba(0,0,0,0.1);
-}
-
-.post h3{
-color:#00a4d6;
-}
-
-.post button{
-border:none;
-background:#111;
-color:white;
-padding:10px 15px;
-border-radius:7px;
-margin-top:10px;
-}
-
-.post button:hover{
-background:#00a4d6;
-color:#111;
+.post-card p{
+    color:#9da8b7;
+    font-size:14px;
+    margin-bottom:15px;
 }
 
 .read-more{
-display:none;
-margin-top:15px;
-padding:15px;
-background:#f4f6f8;
-border-radius:8px;
+    color:#168cff;
+    font-weight:bold;
+    cursor:pointer;
 }
 
-
-/* ===== CONTACT ===== */
-
-.contact{
-background:#111;
-color:white;
-text-align:center;
+.full-post{
+    display:none;
+    color:#aeb8c5;
+    margin-top:15px;
 }
 
-.contact a{
-color:#00c3ff;
-text-decoration:none;
-font-weight:bold;
+.close-post{
+    color:#ff6680;
+    cursor:pointer;
+    font-weight:bold;
+    display:block;
+    margin-top:12px;
 }
 
-.contact-box{
-max-width:600px;
-margin:auto;
+/* CONTACT */
+.contact-section{
+    background:#030e1c;
 }
 
-.contact-box input,
-.contact-box textarea{
-width:100%;
-padding:13px;
-margin:8px 0;
-border:none;
-border-radius:7px;
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
 }
 
-.contact-box textarea{
-height:120px;
-resize:vertical;
+.contact-info h3{
+    font-size:30px;
+    margin-bottom:15px;
 }
 
-.contact-box button{
-background:#00c3ff;
-border:none;
-padding:13px 30px;
-border-radius:7px;
-font-weight:bold;
+.contact-info p{
+    color:#aeb8c5;
+    margin-bottom:20px;
 }
 
-.contact-box button:hover{
-background:white;
+.contact-item{
+    margin:15px 0;
 }
 
+.contact-item strong{
+    color:#168cff;
+}
 
-/* ===== FOOTER ===== */
+.contact-form{
+    background:#061323;
+    padding:30px;
+    border-radius:18px;
+    border:1px solid rgba(22,140,255,.18);
+}
 
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    background:#020b18;
+    border:1px solid #18304b;
+    color:#fff;
+    padding:14px;
+    margin-bottom:15px;
+    border-radius:8px;
+    outline:none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    border-color:#168cff;
+}
+
+.contact-form textarea{
+    min-height:150px;
+    resize:vertical;
+}
+
+/* FOOTER */
 footer{
-background:#000;
-color:white;
-text-align:center;
-padding:20px;
+    padding:35px 8%;
+    background:#010711;
+    text-align:center;
+    border-top:1px solid rgba(22,140,255,.15);
 }
 
+.footer-social{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin:18px 0;
+}
 
-/* ===== BACK TO TOP ===== */
+.footer-social a{
+    width:38px;
+    height:38px;
+    border:1px solid #168cff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#168cff;
+}
 
+.footer-social a:hover{
+    background:#168cff;
+    color:#fff;
+}
+
+footer p{
+    color:#7e8b9c;
+    font-size:13px;
+}
+
+/* TOP BUTTON */
 #topBtn{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#00c3ff;
-color:#111;
-border:none;
-width:45px;
-height:45px;
-border-radius:50%;
-font-size:20px;
-font-weight:bold;
-display:none;
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:45px;
+    height:45px;
+    border:none;
+    border-radius:50%;
+    background:#168cff;
+    color:#fff;
+    cursor:pointer;
+    font-size:18px;
+    display:none;
+    z-index:999;
 }
 
+/* RESPONSIVE */
+@media(max-width:1000px){
 
-/* ===== MOBILE ===== */
+    .nav-links{
+        gap:12px;
+    }
+
+    .nav-social{
+        display:none;
+    }
+
+    .skills-grid,
+    .services-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .portfolio-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .posts-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:800px){
+
+    section{
+        padding:70px 6%;
+    }
+
+    .hero{
+        padding:60px 6%;
+    }
+
+    .hero-container,
+    .about-grid,
+    .contact-grid{
+        flex-direction:column;
+        display:flex;
+    }
+
+    .hero{
+        text-align:center;
+    }
+
+    .hero-text{
+        order:2;
+    }
+
+    .hero-image{
+        order:1;
+    }
+
+    .hero-buttons,
+    .hero-social{
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .hero-image img{
+        width:270px;
+        height:270px;
+    }
+
+    .about-info{
+        width:100%;
+    }
+
+    .education-grid,
+    .pricing-grid{
+        grid-template-columns:1fr;
+    }
+
+    .price-card.featured{
+        transform:none;
+    }
+}
 
 @media(max-width:600px){
 
-nav a{
-display:inline-block;
-margin:5px 7px;
-font-size:14px;
-}
+    .nav-container{
+        padding:12px 5%;
+    }
 
-.hero h1{
-font-size:32px;
-}
+    .logo{
+        font-size:18px;
+    }
 
-.hero h2{
-font-size:20px;
-}
+    .logo img{
+        width:35px;
+        height:35px;
+    }
 
-.service-card,
-.price-card,
-.post{
-width:90%;
-}
+    .nav-links{
+        display:none;
+    }
 
-.social-links{
-flex-direction:column;
-align-items:center;
-}
+    .hero h1{
+        font-size:40px;
+    }
 
-.social-link{
-width:90%;
-}
+    .hero h2{
+        font-size:19px;
+    }
 
-}
+    .hero p{
+        font-size:15px;
+    }
 
+    .section-title h2{
+        font-size:30px;
+    }
+
+    .skills-grid,
+    .services-grid,
+    .portfolio-grid,
+    .posts-grid,
+    .about-info{
+        grid-template-columns:1fr;
+    }
+
+    .hero-image img{
+        width:230px;
+        height:230px;
+    }
+
+    .project-image{
+        height:180px;
+    }
+
+    .contact-form{
+        padding:22px;
+    }
+}
 </style>
-
 </head>
-
 
 <body>
 
+<!-- NAVBAR -->
+<header class="navbar">
+<div class="nav-container">
 
-<!-- ===== NAVIGATION ===== -->
-
-<nav>
-
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#pricing">Pricing</a>
-<a href="#faq">FAQ</a>
-<a href="#social">Social</a>
-<a href="#posts">Posts</a>
-<a href="#contact">Contact</a>
-
-</nav>
-
-
-<!-- ===== HERO ===== -->
-
-<section class="hero" id="home">
-
-<div class="profile-circle">
-JA
-</div>
-
-<h1>Welcome to My Website</h1>
-
-<h2>Jilal Ahmed</h2>
-
-<p>
-Web Development & Graphics Design
-</p>
-
-<p>
-I am passionate about creating modern websites
-and attractive graphics designs.
-</p>
-
-<div class="skills">
-
-<span class="skill">HTML</span>
-<span class="skill">CSS</span>
-<span class="skill">JavaScript</span>
-<span class="skill">Graphics Design</span>
-
-</div>
-
-<a class="btn" href="#services">
-View My Services
+<a href="#home" class="logo">
+<img src="myphoto.jpg" alt="Jilal Ahmed">
+Jilal Ahmed
 </a>
 
+<ul class="nav-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#portfolio">Projects</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#pricing">Pricing</a></li>
+<li><a href="#faq">FAQ</a></li>
+<li><a href="#posts">Posts</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+<div class="nav-social">
+<a href="https://www.facebook.com/share/1DEfDZSM1U/" target="_blank">f</a>
+<a href="https://wa.me/message/5D3CF4FHLL7IJ1" target="_blank">W</a>
+<a href="https://www.instagram.com/mlszilalahmed/" target="_blank">I</a>
+<a href="#" target="_blank">T</a>
+<a href="https://www.youtube.com/@MLSZilalahmed" target="_blank">Y</a>
+</div>
+
+</div>
+</header>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+<div class="hero-container">
+
+<div class="hero-text">
+
+<div class="hero-small">👋 Hello, I'm</div>
+
+<h1>Jilal Ahmed</h1>
+
+<h2>Web Developer | Learner | Future Builder</h2>
+
+<p>
+I am learning web development and graphics design with the goal of
+building modern, useful and professional digital experiences.
+I believe in hard work, consistency and Allah's plan.
+</p>
+
+<div class="hero-buttons">
+<a href="#about" class="btn">About Me</a>
+<a href="cv.pdf" class="btn btn-outline" download>Download CV</a>
+</div>
+
+<div class="hero-social">
+<a href="https://www.facebook.com/share/1DEfDZSM1U/" target="_blank">Facebook</a>
+<a href="https://wa.me/message/5D3CF4FHLL7IJ1" target="_blank">WhatsApp</a>
+<a href="https://www.instagram.com/mlszilalahmed/" target="_blank">Instagram</a>
+<a href="#" target="_blank">T</a>
+<a href="https://www.youtube.com/@MLSZilalahmed" target="_blank">YouTube</a>
+</div>
+
+</div>
+
+<div class="hero-image">
+<img src="myphoto.jpg" alt="Jilal Ahmed">
+</div>
+
+</div>
 </section>
 
 
-<!-- ===== ABOUT ===== -->
+<!-- ABOUT -->
+<section id="about">
+<div class="container">
 
-<section class="about" id="about">
+<div class="section-title">
+<h2>About <span>Me</span></h2>
+<p>Know more about me and my goals</p>
+</div>
 
-<h2>About Me</h2>
+<div class="about-grid">
 
-<div class="about-content">
+<div class="about-text">
+
+<h3>Hello! I'm Jilal Ahmed</h3>
 
 <p>
-Hello! I am Jilal Ahmed.
-I am learning Web Development and Graphics Design.
-My goal is to create professional websites
-and provide quality digital services.
+I am from Bangladesh. I completed my education and now I am focusing
+on building my career in web development and graphics design.
+</p>
+
+<p>
+I enjoy learning new skills, exploring technology and creating useful
+projects. My goal is to become a professional freelancer and build a
+better future through digital skills.
+</p>
+
+<p>
+I am currently improving my HTML, CSS, JavaScript and graphics design
+skills through practical projects.
 </p>
 
 </div>
 
+<div class="about-info">
+
+<div class="info-card">
+<h4>🌐 Location</h4>
+<p>Bangladesh</p>
+</div>
+
+<div class="info-card">
+<h4>💻 Focus</h4>
+<p>Web Development</p>
+</div>
+
+<div class="info-card">
+<h4>🎨 Creative Skill</h4>
+<p>Graphics Design</p>
+</div>
+
+<div class="info-card">
+<h4>📧 Email</h4>
+<p>mlszilalahmed@gmail.com</p>
+</div>
+
+</div>
+
+</div>
+</div>
 </section>
 
 
-<!-- ===== SERVICES ===== -->
+<!-- SKILLS -->
+<section id="skills">
+<div class="container">
 
-<section class="services" id="services">
-
-<h2>My Services</h2>
-
-<div class="service-container">
-
-<div class="service-card">
-<h3>🌐 Web Development</h3>
-<p>
-Modern and responsive website development.
-</p>
+<div class="section-title">
+<h2>My <span>Skills</span></h2>
+<p>Skills I am learning and developing</p>
 </div>
 
-<div class="service-card">
-<h3>🎨 Graphics Design</h3>
-<p>
-Logo, banner, social media and other designs.
-</p>
+<div class="skills-grid">
+
+<div class="skill-card">
+<h3>HTML</h3>
+<p>Website structure and semantic HTML</p>
+<div class="skill-bar">
+<div class="skill-fill" style="width:90%"></div>
+</div>
 </div>
 
-<div class="service-card">
-<h3>💻 HTML & CSS</h3>
-<p>
-Clean and responsive webpage design.
-</p>
+<div class="skill-card">
+<h3>CSS</h3>
+<p>Modern styling and responsive layouts</p>
+<div class="skill-bar">
+<div class="skill-fill" style="width:85%"></div>
+</div>
 </div>
 
-<div class="service-card">
-<h3>⚡ JavaScript</h3>
-<p>
-Interactive website features and functions.
-</p>
+<div class="skill-card">
+<h3>JavaScript</h3>
+<p>Interactive website functionality</p>
+<div class="skill-bar">
+<div class="skill-fill" style="width:70%"></div>
+</div>
 </div>
 
-</div>
-
-</section>
-
-
-<!-- ===== PRICING ===== -->
-
-<section class="pricing" id="pricing">
-
-<h2>Pricing</h2>
-
-<div class="price-container">
-
-<div class="price-card">
-
-<h3>Basic Website</h3>
-
-<div class="price">
-$30+
-</div>
-
-<p>
-Simple personal website
-</p>
-
-</div>
-
-<div class="price-card">
-
-<h3>Professional Website</h3>
-
-<div class="price">
-$80+
-</div>
-
-<p>
-Modern professional website
-</p>
-
-</div>
-
-<div class="price-card">
-
+<div class="skill-card">
 <h3>Graphics Design</h3>
-
-<div class="price">
-$15+
+<p>Social media and promotional designs</p>
+<div class="skill-bar">
+<div class="skill-fill" style="width:75%"></div>
 </div>
-
-<p>
-Logo, banner and social design
-</p>
-
 </div>
 
 </div>
-
+</div>
 </section>
 
 
-<!-- ===== FAQ ===== -->
+<!-- SERVICES -->
+<section id="services">
+<div class="container">
 
-<section class="faq" id="faq">
+<div class="section-title">
+<h2>My <span>Services</span></h2>
+<p>What I can offer</p>
+</div>
 
-<h2 style="text-align:center;">
-Frequently Asked Questions
-</h2>
+<div class="services-grid">
+
+<div class="service-card">
+<div class="service-icon">💻</div>
+<h3>Web Development</h3>
+<p>Modern and responsive websites using HTML, CSS and JavaScript.</p>
+</div>
+
+<div class="service-card">
+<div class="service-icon">🎨</div>
+<h3>Graphics Design</h3>
+<p>Creative social media posts, promotional graphics and visual designs.</p>
+</div>
+
+<div class="service-card">
+<div class="service-icon">📱</div>
+<h3>Responsive Design</h3>
+<p>Websites that work smoothly on desktop, tablet and mobile devices.</p>
+</div>
+
+<div class="service-card">
+<div class="service-icon">⚙️</div>
+<h3>Website Maintenance</h3>
+<p>Basic updates, content changes and improvements for websites.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- PORTFOLIO -->
+<section class="portfolio-section" id="portfolio">
+<div class="container">
+
+<div class="section-title">
+<h2>My <span>Projects</span></h2>
+<p>Some of my learning and creative projects</p>
+</div>
+
+<p class="portfolio-intro">
+This portfolio section will grow as I complete more professional
+web development and graphics design projects.
+</p>
+
+<div class="portfolio-grid">
+
+<div class="project-card">
+<div class="project-image">🌐</div>
+<div class="project-content">
+<span class="project-tag">Web Development</span>
+<h3>Personal Portfolio Website</h3>
+<p>A modern personal portfolio website created with HTML, CSS and JavaScript.</p>
+<span class="project-btn">Project Coming Soon →</span>
+</div>
+</div>
+
+<div class="project-card">
+<div class="project-image">🎨</div>
+<div class="project-content">
+<span class="project-tag">Graphics Design</span>
+<h3>Creative Design Project</h3>
+<p>A modern promotional graphics design project focused on clean visual presentation.</p>
+<span class="project-btn">Project Coming Soon →</span>
+</div>
+</div>
+
+<div class="project-card">
+<div class="project-image">🏢</div>
+<div class="project-content">
+<span class="project-tag">Web Development</span>
+<h3>Business Website</h3>
+<p>A professional business website concept with responsive sections and modern styling.</p>
+<span class="project-btn">Project Coming Soon →</span>
+</div>
+</div>
+
+<div class="project-card">
+<div class="project-image">📱</div>
+<div class="project-content">
+<span class="project-tag">Social Media</span>
+<h3>Social Media Design</h3>
+<p>Creative social media content designed for attractive and professional presentation.</p>
+<span class="project-btn">Project Coming Soon →</span>
+</div>
+</div>
+
+<div class="project-card">
+<div class="project-image">🛒</div>
+<div class="project-content">
+<span class="project-tag">Web Development</span>
+<h3>E-Commerce Website</h3>
+<p>An e-commerce website concept with product-focused sections and responsive design.</p>
+<span class="project-btn">Project Coming Soon →</span>
+</div>
+</div>
+
+<div class="project-card">
+<div class="project-image">⚡</div>
+<div class="project-content">
+<span class="project-tag">JavaScript</span>
+<h3>JavaScript Project</h3>
+<p>An interactive project demonstrating JavaScript functionality and user interaction.</p>
+<span class="project-btn">Project Coming Soon →</span>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- EDUCATION -->
+<section id="education">
+<div class="container">
+
+<div class="section-title">
+<h2>My <span>Education</span></h2>
+<p>My learning journey</p>
+</div>
+
+<div class="education-grid">
+
+<div class="education-card">
+<span>Academic</span>
+<h3>Education</h3>
+<p>
+I have completed my academic education and continue to learn new
+skills for my professional career.
+</p>
+</div>
+
+<div class="education-card">
+<span>Professional Learning</span>
+<h3>Web Development</h3>
+<p>
+Currently learning HTML, CSS, JavaScript, responsive design and
+professional website development.
+</p>
+</div>
+
+<div class="education-card">
+<span>Creative Learning</span>
+<h3>Graphics Design</h3>
+<p>
+Practicing modern graphics design, social media content and
+promotional visual design.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- PRICING -->
+<section id="pricing">
+<div class="container">
+
+<div class="section-title">
+<h2>My <span>Pricing</span></h2>
+<p>Simple starting packages</p>
+</div>
+
+<div class="pricing-grid">
+
+<div class="price-card">
+<h3>Basic</h3>
+<div class="price">$30+</div>
+<ul>
+<li>✔ Simple Website</li>
+<li>✔ HTML & CSS</li>
+<li>✔ Responsive Design</li>
+<li>✔ Basic Support</li>
+</ul>
+<a href="#contact" class="btn">Get Started</a>
+</div>
+
+<div class="price-card featured">
+<h3>Standard</h3>
+<div class="price">$70+</div>
+<ul>
+<li>✔ Professional Website</li>
+<li>✔ HTML, CSS & JavaScript</li>
+<li>✔ Responsive Design</li>
+<li>✔ Contact Section</li>
+<li>✔ Basic Support</li>
+</ul>
+<a href="#contact" class="btn">Get Started</a>
+</div>
+
+<div class="price-card">
+<h3>Premium</h3>
+<div class="price">$150+</div>
+<ul>
+<li>✔ Advanced Website</li>
+<li>✔ Modern UI Design</li>
+<li>✔ JavaScript Features</li>
+<li>✔ Responsive Design</li>
+<li>✔ Maintenance Support</li>
+</ul>
+<a href="#contact" class="btn">Get Started</a>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- FAQ -->
+<section id="faq">
+<div class="container">
+
+<div class="section-title">
+<h2>Frequently Asked <span>Questions</span></h2>
+<p>Some common questions</p>
+</div>
 
 <div class="faq-container">
 
-<details>
-
-<summary>
-What services do you provide?
-</summary>
-
-<p>
-I provide web development and graphics design services.
-</p>
-
-</details>
-
-<details>
-
-<summary>
-Can you create a responsive website?
-</summary>
-
-<p>
-Yes. I can create websites that work on mobile,
-tablet and computer.
-</p>
-
-</details>
-
-<details>
-
-<summary>
-Do you work with international clients?
-</summary>
-
-<p>
-Yes. I can provide digital services to clients
-from different countries.
-</p>
-
-</details>
-
-<details>
-
-<summary>
-How can I contact you?
-</summary>
-
-<p>
-You can contact me through the contact section
-or social media.
-</p>
-
-</details>
-
+<div class="faq">
+<h3>What type of websites can you create?</h3>
+<p>I can create personal, portfolio, business, landing page and other responsive websites.</p>
 </div>
 
+<div class="faq">
+<h3>Do you create responsive websites?</h3>
+<p>Yes. My websites are designed to work on desktop, tablet and mobile screens.</p>
+</div>
+
+<div class="faq">
+<h3>Can I contact you for a project?</h3>
+<p>Yes. You can contact me through the contact form or my social media links.</p>
+</div>
+
+<div class="faq">
+<h3>Are you still learning?</h3>
+<p>Yes. I am continuously learning and improving my web development and graphics design skills.</p>
+</div>
+
+</div>
+</div>
 </section>
 
 
-<!-- ===== SOCIAL MEDIA ===== -->
+<!-- POSTS -->
+<section id="posts">
+<div class="container">
 
-<section class="social" id="social">
-
-<h2>
-📱 Connect With Me
-</h2>
-
-<p>
-Follow me on social media and stay connected.
-</p>
-
-<div class="social-links">
-
-<a class="social-link facebook"
-href="https://www.facebook.com/"
-target="_blank">
-📘 Facebook
-</a>
-
-<a class="social-link whatsapp"
-href="https://wa.me/"
-target="_blank">
-💬 WhatsApp
-</a>
-
-<a class="social-link instagram"
-href="https://www.instagram.com/"
-target="_blank">
-📷 Instagram
-</a>
-
-<a class="social-link youtube"
-href="https://www.youtube.com/"
-target="_blank">
-▶️ YouTube
-</a>
-
-<a class="social-link tiktok"
-href="https://www.tiktok.com/"
-target="_blank">
-🎵 TikTok
-</a>
-
+<div class="section-title">
+<h2>Trending <span>Posts</span></h2>
+<p>My learning and development journey</p>
 </div>
 
+<div class="posts-grid">
+
+<div class="post-card">
+<span>September 8, 2026</span>
+<h3>My First Website</h3>
+<p>My journey started with creating my first HTML website.</p>
+<div class="read-more" onclick="showPost(1)">Read More →</div>
+
+<div class="full-post" id="post1">
+Creating my first website helped me understand how HTML works and
+gave me the motivation to continue learning web development.
+<span class="close-post" onclick="closePost(1)">Close</span>
+</div>
+</div>
+
+<div class="post-card">
+<span>Web Development</span>
+<h3>How to Learn Web Development</h3>
+<p>A simple roadmap for beginners who want to start web development.</p>
+<div class="read-more" onclick="showPost(2)">Read More →</div>
+
+<div class="full-post" id="post2">
+Start with HTML, then learn CSS, JavaScript and responsive design.
+After building several projects, start creating a professional portfolio.
+<span class="close-post" onclick="closePost(2)">Close</span>
+</div>
+</div>
+
+<div class="post-card">
+<span>Graphics Design</span>
+<h3>Learning Graphics Design</h3>
+<p>My experience practicing modern graphics design.</p>
+<div class="read-more" onclick="showPost(3)">Read More →</div>
+
+<div class="full-post" id="post3">
+Graphics design is another skill I am developing through practical
+projects and creative experiments.
+<span class="close-post" onclick="closePost(3)">Close</span>
+</div>
+</div>
+
+<div class="post-card">
+<span>Career</span>
+<h3>Building Digital Skills</h3>
+<p>Why learning digital skills can create new career opportunities.</p>
+<div class="read-more" onclick="showPost(4)">Read More →</div>
+
+<div class="full-post" id="post4">
+Building strong digital skills can open opportunities for freelancing,
+remote work and personal projects.
+<span class="close-post" onclick="closePost(4)">Close</span>
+</div>
+</div>
+
+<div class="post-card">
+<span>Learning</span>
+<h3>Consistency Is Important</h3>
+<p>Small daily progress can create big improvements over time.</p>
+<div class="read-more" onclick="showPost(5)">Read More →</div>
+
+<div class="full-post" id="post5">
+Learning consistently is more important than trying to learn everything
+in one day. Practice, build and improve step by step.
+<span class="close-post" onclick="closePost(5)">Close</span>
+</div>
+</div>
+
+</div>
+</div>
 </section>
 
 
-<!-- ===== POSTS ===== -->
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+<div class="container">
 
-<section class="posts" id="posts">
-
-<h2>
-🔥 Trending Posts
-</h2>
-
-<div class="search-box">
-
-<input
-type="text"
-id="searchInput"
-placeholder="Search posts..."
-onkeyup="searchPosts()">
-
+<div class="section-title">
+<h2>Contact <span>Me</span></h2>
+<p>Let's work together</p>
 </div>
 
-<div class="post-container">
+<div class="contact-grid">
 
+<div class="contact-info">
 
-<!-- Web Development -->
-
-<div class="post">
-
-<h3>🌐 Web Development</h3>
+<h3>Let's Talk</h3>
 
 <p>
-Learn how modern websites are created.
+Have a project, question or idea? Send me a message and I will get
+back to you as soon as possible.
 </p>
 
-<button onclick="togglePost(this)">
-Read More
-</button>
-
-<div class="read-more">
-
-<p>
-Web development includes HTML, CSS and JavaScript.
-These technologies help create modern websites.
-</p>
-
-<button onclick="closePost(this)">
-Close
-</button>
-
-</div>
-
-<br>
-
-<button onclick="likePost(this)">
-❤️ Like <span>0</span>
-</button>
-
-<button onclick="sharePost()">
-🔗 Share
-</button>
-
-</div>
-
-
-<!-- Graphics Design -->
-
-<div class="post">
-
-<h3>🎨 Graphics Design</h3>
-
-<p>
-Creative design can make your business attractive.
-</p>
-
-<button onclick="togglePost(this)">
-Read More
-</button>
-
-<div class="read-more">
-
-<p>
-Graphics design is useful for logos,
-banners, advertisements and social media.
-</p>
-
-<button onclick="closePost(this)">
-Close
-</button>
-
-</div>
-
-<br>
-
-<button onclick="likePost(this)">
-❤️ Like <span>0</span>
-</button>
-
-<button onclick="sharePost()">
-🔗 Share
-</button>
-
-</div>
-
-
-<!-- Freelancing -->
-
-<div class="post">
-
-<h3>💻 Freelancing</h3>
-
-<p>
-Learn skills and work with clients online.
-</p>
-
-<button onclick="togglePost(this)">
-Read More
-</button>
-
-<div class="read-more">
-
-<p>
-Web development and graphics design can be
-useful skills for freelancing.
-</p>
-
-<button onclick="closePost(this)">
-Close
-</button>
-
-</div>
-
-<br>
-
-<button onclick="likePost(this)">
-❤️ Like <span>0</span>
-</button>
-
-<button onclick="sharePost()">
-🔗 Share
-</button>
-
-</div>
-
-
-<!-- Digital Marketing -->
-
-<div class="post">
-
-<h3>📣 Digital Marketing</h3>
-
-<p>
-Learn how businesses promote their products
-and services online.
-</p>
-
-<button onclick="togglePost(this)">
-Read More
-</button>
-
-<div class="read-more">
-
-<p>
-Digital marketing includes social media marketing,
-SEO, content marketing and online advertising.
-</p>
-
-<button onclick="closePost(this)">
-Close
-</button>
-
-</div>
-
-<br>
-
-<button onclick="likePost(this)">
-❤️ Like <span>0</span>
-</button>
-
-<button onclick="sharePost()">
-🔗 Share
-</button>
-
-</div>
-
-
-<!-- E-Commerce -->
-
-<div class="post">
-
-<h3>🛒 E-Commerce</h3>
-
-<p>
-Learn about online stores and digital business.
-</p>
-
-<button onclick="togglePost(this)">
-Read More
-</button>
-
-<div class="read-more">
-
-<p>
-E-Commerce allows businesses to sell products
-and services online through websites and apps.
-</p>
-
-<button onclick="closePost(this)">
-Close
-</button>
-
-</div>
-
-<br>
-
-<button onclick="likePost(this)">
-❤️ Like <span>0</span>
-</button>
-
-<button onclick="sharePost()">
-🔗 Share
-</button>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- ===== CONTACT ===== -->
-
-<section class="contact" id="contact">
-
-<h2>
-📩 Contact Me
-</h2>
-
-<div class="contact-box">
-
-<p>
-Email:
-<a href="mailto:mlszilalahmed@gmail.com">
+<div class="contact-item">
+<strong>Email:</strong><br>
 mlszilalahmed@gmail.com
-</a>
-</p>
+</div>
+
+<div class="contact-item">
+<strong>Location:</strong><br>
+Bangladesh
+</div>
+
+<div class="contact-item">
+<strong>Available For:</strong><br>
+Web Development & Graphics Design
+</div>
+
+</div>
 
 <form
+class="contact-form"
 action="https://formsubmit.co/mlszilalahmed@gmail.com"
 method="POST">
 
-<input
-type="text"
-name="name"
-placeholder="Your Name"
-required>
+<input type="hidden" name="_subject" value="New Message From Jilal Ahmed Portfolio">
+<input type="hidden" name="_captcha" value="false">
 
-<input
-type="email"
-name="email"
-placeholder="Your Email"
-required>
+<input type="text" name="name" placeholder="Your Name" required>
 
-<textarea
-name="message"
-placeholder="Your Message"
-required></textarea>
+<input type="email" name="email" placeholder="Your Email" required>
 
-<input
-type="hidden"
-name="_subject"
-value="New Message From Jilal Ahmed Website">
+<input type="text" name="subject" placeholder="Subject" required>
 
-<input
-type="hidden"
-name="_captcha"
-value="false">
+<textarea name="message" placeholder="Your Message" required></textarea>
 
-<button type="submit">
-Send Message
-</button>
+<button type="submit" class="btn">Send Message</button>
 
 </form>
 
 </div>
-
+</div>
 </section>
 
 
-<!-- ===== FOOTER ===== -->
-
+<!-- FOOTER -->
 <footer>
 
-<p>
-© 2026 Jilal Ahmed. All Rights Reserved.
-</p>
+<h3>Jilal Ahmed</h3>
+
+<div class="footer-social">
+
+<a href="https://www.facebook.com/share/1DEfDZSM1U/" target="_blank">f</a>
+
+<a href="https://wa.me/message/5D3CF4FHLL7IJ1" target="_blank">W</a>
+
+<a href="https://www.instagram.com/mlszilalahmed/" target="_blank">I</a>
+
+<a href="#" target="_blank">T</a>
+
+<a href="https://www.youtube.com/@MLSZilalahmed" target="_blank">Y</a>
+
+</div>
+
+<p>© 2026 Jilal Ahmed. All Rights Reserved.</p>
 
 </footer>
 
 
-<!-- ===== BACK TO TOP ===== -->
+<!-- BACK TO TOP -->
+<button id="topBtn" onclick="topFunction()">↑</button>
 
-<button id="topBtn"
-onclick="topFunction()">
-↑
-</button>
-
-
-<!-- ===== JAVASCRIPT ===== -->
 
 <script>
 
-
-/* SEARCH POSTS */
-
-function searchPosts(){
-
-let input =
-document.getElementById("searchInput")
-.value
-.toLowerCase();
-
-let posts =
-document.querySelectorAll(".post");
-
-posts.forEach(function(post){
-
-let text =
-post.innerText.toLowerCase();
-
-if(text.includes(input)){
-
-post.style.display="block";
-
-}else{
-
-post.style.display="none";
-
+function showPost(id){
+    document.getElementById("post"+id).style.display="block";
 }
 
-});
-
+function closePost(id){
+    document.getElementById("post"+id).style.display="none";
 }
 
+let topButton = document.getElementById("topBtn");
 
-/* LIKE BUTTON */
-
-function likePost(button){
-
-let span =
-button.querySelector("span");
-
-let count =
-parseInt(span.innerText);
-
-count++;
-
-span.innerText=count;
-
-}
-
-
-/* SHARE BUTTON */
-
-function sharePost(){
-
-if(navigator.share){
-
-navigator.share({
-
-title:"Jilal Ahmed Website",
-
-text:"Check out my website!",
-
-url:window.location.href
-
-});
-
-}else{
-
-alert("Share feature is not supported in this browser.");
-
-}
-
-}
-
-
-/* READ MORE */
-
-function togglePost(button){
-
-let content =
-button.nextElementSibling;
-
-content.style.display="block";
-
-button.style.display="none";
-
-}
-
-
-/* CLOSE READ MORE */
-
-function closePost(button){
-
-let content =
-button.parentElement;
-
-let readMoreButton =
-content.previousElementSibling;
-
-content.style.display="none";
-
-readMoreButton.style.display="inline-block";
-
-}
-
-
-/* BACK TO TOP */
-
-let topBtn =
-document.getElementById("topBtn");
-
-window.onscroll=function(){
-
-if(
-document.body.scrollTop > 300 ||
-document.documentElement.scrollTop > 300
-){
-
-topBtn.style.display="block";
-
-}else{
-
-topBtn.style.display="none";
-
-}
-
+window.onscroll = function(){
+    if(document.documentElement.scrollTop > 400){
+        topButton.style.display = "block";
+    }else{
+        topButton.style.display = "none";
+    }
 };
 
-
 function topFunction(){
-
-window.scrollTo({
-
-top:0,
-
-behavior:"smooth"
-
-});
-
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 }
 
 </script>
 
-
 </body>
-
 </html>
